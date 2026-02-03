@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    int decnum,sum=0,place=1,rem;
+    scanf("%d", &decnum);
+    while(decnum!=0){
+        rem=decnum%8;
+        sum+=rem*place;
+        decnum/=8; 
+        place*=10;
+    } 
+    printf("conversion is: %d", sum);
+    return 0;
+}
