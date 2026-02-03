@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int decnum,temp,sum=0,place=1;
+    printf("enter the number:");
+    scanf("%d", &decnum);
+    temp=decnum;
+    while(temp!=0){
+        int rem=temp%2;
+        sum+=rem*place;
+        temp/=2;
+        place*=10;
+
+    } 
+    printf("the conversion of %d into binary is %d", decnum, sum);
+    return 0;
+}
