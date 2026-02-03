@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+    int decnum, rem;
+    char hex[20];
+    int i = 0;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decnum);
+
+    while (decnum != 0) {
+        rem = decnum % 16;
+
+        if (rem < 10)            /* char array stores ascii value*/
+            hex[i] = rem + '0';
+        else
+            hex[i] = rem - 10 + 'A'; /* if a is 11 so hex will store 1+a 
+                                      ie 1+65(ascii value of a) 
+                                      ie 66 ie b*/
+            
+
+        i++;
+        decnum = decnum / 16; /* in case of 26, hex="a1"*/
+    }
+
+    printf("Hexadecimal: "); /* i=2*/
+    for (int j = i - 1; j >= 0; j--) { /* j used to print in rev order*/
+        printf("%c", hex[j]);
+    }
+
+    return 0;
+}
